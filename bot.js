@@ -28,6 +28,27 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
   console.log('')
 });
 
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const prefix = '$'
+
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+});
+
+client.on('message', msg => {
+  if (msg.content === 'ping') {
+    msg.reply('Pong!');
+  }
+});
+
+
+
+
+
+
+
+
 client.on('ready', function(){    
     var ms = 40000 ;    
     var setGame = ['Made By Mdax','xR1'];    
@@ -45,6 +66,9 @@ j = 1;
 }, ms);    
     
 });
+
+
+
 
 
 client.on('message', msg => {
@@ -138,8 +162,6 @@ client.on('message', msg => {
   }
 });
 
-
-
 client.on('message', message => {
 if (message.content.startsWith('السلام عليكم')){
      let ra3d = new Discord.RichEmbed()
@@ -183,10 +205,12 @@ client.on("message", async msg => {
     await msg.channel.send(idk)
   }
 });
+	
 
 
+	
 
-onst Sra7a = [
+const Sra7a = [
     'صراحه  |  صوتك حلوة؟',
     'صراحه  |  التقيت الناس مع وجوهين؟',
     'صراحه  |  شيء وكنت تحقق اللسان؟',
@@ -247,10 +271,7 @@ onst Sra7a = [
     '‏صراحه  |  ما اكثر شي ندمن عليه؟',
     'صراحه  |  ما هي أمنياتك المُستقبلية؟‏',
 ]
-
-
-
- client.on('message', message => {
+  client.on('message', message => {
 if (message.content.startsWith('$sara7a')) {
     if(!message.channel.guild) return message.reply('** This command only for servers **');
  var client= new Discord.RichEmbed()
@@ -266,6 +287,7 @@ if (message.content.startsWith('$sara7a')) {
 });
 
 
+
 const bannedwords = [
     "كل زق",
     "كس",
@@ -276,12 +298,13 @@ const bannedwords = [
 
   ];
 
-lient.on('message',  message => {
+client.on('message',  message => {
   if(bannedwords.some(word => message.content.includes(word))) {
     message.delete()
     message.reply(" احترم نفسك , يمنع الشتم في خادمنا او سوف تتعرض الي  ميوت ").then(msg => {msg.delete(5000)});;
   };
 });
+
 
 
 client.on('message', message => {
@@ -316,6 +339,8 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__�
 
 
 
+             
+     
 client.on('message' , message => {
 if (message.content === '$help') {
            if (!message.member.hasPermission('MANAGE_MESSAGES')) return;
@@ -346,8 +371,6 @@ if (message.content === '$help') {
     }
 });
 
-
-
 client.on('message', message => {
     let args = message.content.split(" ").slice(1);
 if (message.content.startsWith(prefix + 'clear')) {
@@ -360,11 +383,9 @@ if (message.content.startsWith(prefix + 'clear')) {
   }
   });
 
-
-
-
-
-ar antispam = require("anti-spam");//npm i anti-spam
+         
+     
+var antispam = require("anti-spam");//npm i anti-spam
  
 antispam(client, {
   warnBuffer: 3, //الحد الأقصى المسموح به من الرسائل لإرسالها في الفاصل الزمني قبل الحصول على تحذير.
@@ -377,7 +398,6 @@ antispam(client, {
   maxDuplicatesBan: 10, // عدد الرسايل الي يقدر المستخدم يرسلها قبل الميوت
   time: 200, // عدد الوقت الي يجلس لين تسحب رتبة الميوت من الشخص الحسبة برمجية وليست كتابية 
 });
-
 
 
 
@@ -415,10 +435,9 @@ client.on("message", message => {
   };
   });
  
-
-
-
-client.on('message', message => {
+  
+ 
+ client.on('message', message => {
     if (message.author.id === client.user.id) return;
     if (message.guild) {
    let embed = new Discord.RichEmbed()
@@ -441,10 +460,7 @@ return;
     }
 });
 
-
-
-
-client.on("message", message => {
+ client.on("message", message => {
 
             if (message.content.startsWith(prefix + "bc2")) {
                          if (!message.member.hasPermission("ADMINISTRATOR"))  return;
@@ -457,6 +473,13 @@ client.on("message", message => {
  message.delete(); 
 };     
 });
+ 
+ 
+ 
+ 
+ 
+ 
+
 
 client.on("message", function(message) {
     var prefix = "$";
@@ -500,6 +523,10 @@ reaction3.on("collect", r => {
 });
 
 
+
+
+
+
 client.on('message', message => {
 if (message.content.startsWith("ban$")) {
     var mention = message.mentions.members.first();
@@ -510,10 +537,6 @@ if (message.content.startsWith("ban$")) {
     message.channel.send("تم أعطاء باند الى : " + mention.tag);
 };
 });
-
-
-
-
 
 client.on('message', function(message) {
     if (message.channel.type === "dm") {
@@ -528,9 +551,6 @@ client.on('message', function(message) {
         client.channels.get("501121173598371844").send({ embed: stewart });
     }
 });
-
-
-
 
 
 client.on('message', message => {
@@ -555,7 +575,6 @@ client.on('message', message => {
 
 
 
-
    client.on('guildMemberAdd', member => {
    if(member.presence.status === 'offline') {
        member.guild.owner.send(`:eyes: في واحد دخل السيرفر ومسوي نفسه غامض اوفلاين `)
@@ -566,7 +585,6 @@ client.on('guildMemberRemove', member => {
        member.guild.owner.send(`في واحد خرج من سيرفرك وهو مسوي نفسه غامض اوف لاين :eyes: `)
 }
 });
-
 
 
 
@@ -641,7 +659,15 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return mess
 
 
 
-lient.on('message', message => {
+
+   
+
+
+
+
+  
+
+client.on('message', message => {
 if (message.content.startsWith(`${prefix}info`)) {
 message.channel.send({
 embed: new Discord.RichEmbed()
@@ -662,6 +688,10 @@ embed: new Discord.RichEmbed()
 })
 }
 });
+
+
+
+
 
 
 client.on('message', message => {
@@ -685,6 +715,7 @@ embed: new Discord.RichEmbed()
 })
 }
 });
+
 
 
 
@@ -725,7 +756,6 @@ const prefix = "$";
 
 
 
-
   client.on("message", msg => {
     var prefix = "$";
 if(msg.content.startsWith (prefix + "profile")) {
@@ -745,8 +775,6 @@ embed.addField(":cloud_tornado:  الاسم", `**[ ${msg.author.username}#${msg.
 msg.channel.send({embed: embed})
 }
 });
-
-
 
 
 
