@@ -2,11 +2,7 @@
   "requires": true,
   "lockfileVersion": 1,
   "dependencies": {
-    "anti-spam": {
-      "version": "0.2.7",
-      "resolved": "https://registry.npmjs.org/anti-spam/-/anti-spam-0.2.7.tgz",
-      "integrity": "sha512-dWAFCHWRvG+AJxJgpbUhSUH92xtC1wo6m3oXqIusvyamLUrTHEsX+HgLM+vH++GGg4JD02s7ai5uSWRCQOcH7A=="
-    },
+   
     "async-limiter": {
       "version": "1.0.0",
       "resolved": "https://registry.npmjs.org/async-limiter/-/async-limiter-1.0.0.tgz",
