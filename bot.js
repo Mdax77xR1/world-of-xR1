@@ -4,30 +4,13 @@ const prefix = '$'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
-  console.log('')
-  console.log('')
-  console.log('╔[═════════════════════════════════════════════════════════════════]╗')
-  console.log(`[Start] ${new Date()}`);
-  console.log('╚[═════════════════════════════════════════════════════════════════]╝')
-  console.log('')
-  console.log('╔[════════════════════════════════════]╗');
-  console.log(`Logged in as * [ " ${client.user.username} " ]`);
-  console.log('')
-  console.log('Informations :')
-  console.log('')
-  console.log(`servers! [ " ${client.guilds.size} " ]`);
-  console.log(`Users! [ " ${client.users.size} " ]`);
-  console.log(`channels! [ " ${client.channels.size} " ]`);
-  console.log('╚[════════════════════════════════════]╝')
-  console.log('')
-  console.log('╔[════════════]╗')
-  console.log(' Bot Is Online')
-  console.log('╚[════════════]╝')
-  console.log('')
-  console.log('')
 });
 
+client.on('message', msg => {
+  if (msg.content === 'ping') {
+    msg.reply('Pong!');
+  }
+});
 
 
 
@@ -161,6 +144,37 @@ if (message.content.startsWith('السلام عليكم')){
 });
 
 
+
+
+var math = require('mathjs') // npm i mathjs
+client.on("message", async msg => {
+
+    if (msg.channel.type !== "text") return undefined;
+
+    //if (msg.auhtor.bot) return undefined;
+
+    var args = msg.content.split(" ")
+
+    var prefix = "$"
+
+  if (msg.content.toLowerCase().startsWith(prefix + "math")) {
+
+    if (!args[1]) return msg.channel.send("DiscordAPI Err : Missing args.")
+
+    if (args[1].length == 1) return msg.channel.send("JUST ONE NUMBER?????");
+
+    var count = parseInt(args[1]);
+
+    if (isNaN(count)) return msg.channel.send('No nigga');
+
+    try {
+      idk = await math.eval(args[1])
+    } catch (e) {
+      return msg.channel.send("ERRRRRRRRRRRRRRRRRRRRRRRR")
+    }
+    await msg.channel.send(idk)
+  }
+});
 	
 
 
@@ -341,7 +355,19 @@ if (message.content.startsWith(prefix + 'clear')) {
 
          
      
-
+var antispam = require("anti-spam");//npm i anti-spam
+ 
+antispam(client, {
+  warnBuffer: 3, //الحد الأقصى المسموح به من الرسائل لإرسالها في الفاصل الزمني قبل الحصول على تحذير.
+  maxBuffer: 5, // الحد الأقصى المسموح به من الرسائل لإرسالها في الفاصل الزمني قبل الحصول على ميوت.
+  interval: 1000, // مقدار الوقت قبل حصول باند
+  warningMessage: "stop spamming.", // رسالة تحذير اذا سوا سبام!
+  roleMessage: "Muted!!", // الرسالة الي تجي اذا شخص اخذ ميوت
+  roleName: "Muted", // اسم رتبة الميوت
+  maxDuplicatesWarning: 7, // عدد الرسايل الي قبل التحذيرات
+  maxDuplicatesBan: 10, // عدد الرسايل الي يقدر المستخدم يرسلها قبل الميوت
+  time: 200, // عدد الوقت الي يجلس لين تسحب رتبة الميوت من الشخص الحسبة برمجية وليست كتابية 
+});
 
 
 
@@ -652,7 +678,7 @@ embed: new Discord.RichEmbed()
    .addField('``Users``' ,`[ ${client.users.size} ]` , true)
    .addField('``My Name``' , `[ ${client.user.tag} ]` , true)
    .addField('``My ID``' , `[ ${client.user.id} ]` , true)
-         .addField('``My Prefix``' , `[ prefix ]` , true)
+         .addField('``My Prefix``' , `[ $ ]` , true)
          .addField('``My Language``' , `[ JavaScript ]` , true)
          .addField('``Bot Version``' , `[ v0.1 ]` , true)
          .setFooter('By | <@! - Mdax .#0518 >')
@@ -719,17 +745,6 @@ embed.addField(":cloud_tornado:  الاسم", `**[ ${msg.author.username}#${msg.
 msg.channel.send({embed: embed})
 }
 });
-
-
-
-
-
-
-
-
-
-
-
 
 
 
