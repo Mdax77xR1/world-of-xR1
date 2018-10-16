@@ -749,4 +749,63 @@ msg.channel.send({embed: embed})
 
 
 
+var math = require('mathjs') // npm i mathjs
+client.on("message", async msg => {
+
+    if (msg.channel.type !== "text") return undefined;
+
+    //if (msg.auhtor.bot) return undefined;
+
+    var args = msg.content.split(" ")
+
+    var prefix = "$"
+
+  if (msg.content.toLowerCase().startsWith(prefix + "math")) {
+
+    if (!args[1]) return msg.channel.send("DiscordAPI Err : Missing args.")
+
+    if (args[1].length == 1) return msg.channel.send("JUST ONE NUMBER?????");
+
+    var count = parseInt(args[1]);
+
+    if (isNaN(count)) return msg.channel.send('No nigga');
+
+    try {
+      idk = await math.eval(args[1])
+    } catch (e) {
+      return msg.channel.send("Eror 404")
+    }
+    await msg.channel.send(idk)
+  }
+});
+
+
+ar antispam = require("anti-spam");//npm i anti-spam
+ 
+antispam(client, {
+  warnBuffer: 1, //الحد الأقصى المسموح به من الرسائل لإرسالها في الفاصل الزمني قبل الحصول على تحذير.
+  maxBuffer: 5, // الحد الأقصى المسموح به من الرسائل لإرسالها في الفاصل الزمني قبل الحصول على ميوت.
+  interval: 1000, // مقدار الوقت قبل حصول باند
+  warningMessage: "stop spamming.", // رسالة تحذير اذا سوا سبام!
+  roleMessage: "Muted!!", // الرسالة الي تجي اذا شخص اخذ ميوت
+  roleName: "Muted", // اسم رتبة الميوت
+  maxDuplicatesWarning: 3, // عدد الرسايل الي قبل التحذيرات
+  maxDuplicatesBan: 5, // عدد الرسايل الي يقدر المستخدم يرسلها قبل الميوت
+  time: 800, // عدد الوقت الي يجلس لين تسحب رتبة الميوت من الشخص الحسبة برمجية وليست كتابية 
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 client.login(process.env.BOT_TOKEN);
