@@ -38,7 +38,7 @@ client.user.setGame(`صيآنة`,"http://twitch.tv/S-F")
 
 client.on('ready', function(){    
     var ms = 40000 ;    
-    var setGame = [`Made By : Mdax`,"http://twitch.tv/S-F"];    
+    var setGame = [`Made By : Mdax`,"$help"];    
     var i = -1;    
     var j = 0;    
     setInterval(function (){    
@@ -49,7 +49,7 @@ j = 1;
             j = -1;    
       }    
        i = i+j;    
-        client.user.setGame(setGame[i],`https://www.youtube.com/watch?v=3ACCwbLHXc4`);    
+        client.user.setGame(setGame[i],`http://twitch.tv/S-F`);    
 }, ms);    
     
 });
