@@ -308,7 +308,6 @@ if (message.content === '$help') {
       .addField("**❖ $mute <Mention> <reason>**","**لإعطاء الشخص ميوت**")
       .addField("**❖ $unmute <Mention>**","**لفك الميوت **")
       .addField("**❖ $clear [عددالرسائل]<Mention>**","**لمسح عدد معين من الرسائل **")
-      .addField("**❖ $kick <Mention>**","**مخصص لطرد شخص من روم صوتي**")
       .addField("**❖ $bc <Message> **","**لأرسال البرودكاست**")
       .addField("**❖ $mutechannel**","**لتقفيل الشات**")
       .addField("**❖ $unmutechannel**","**لفتح الشات بعد تقفيله**")
@@ -330,7 +329,7 @@ if (message.content === '$help') {
 
 client.on('message', message => {
     let args = message.content.split(" ").slice(1);
-if (message.content.startsWith(prefix + 'clear')) {
+if (message.content.startsWith('clear')) {
  let args = message.content.split(" ").slice(1)
     let messagecount = parseInt(args);
     if (args > 100) return message.reply("**🛑 || يجب ان يكون عدد المسح أقل من 100 .**").then(messages => messages.delete(5000))
@@ -436,11 +435,11 @@ reaction3.on("collect", r => {
 
 
 client.on('message', message => {
-if (message.content.startsWith("ban$")) {
+if (message.content.startsWith("$ban")) {
     var mention = message.mentions.members.first();
     if(!mention) return message.channel.send("يجب منشن العضو");
 
-    mention.ban("By: " + message.author.tag);
+    mention.ban("By: " + message.mentions.users.first);
     
     message.channel.send("تم أعطاء باند الى : " + mention.tag);
 };
