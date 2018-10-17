@@ -602,7 +602,7 @@ embed: new Discord.RichEmbed()
 
 
 client.on('message', message => {
-if (message.content.startsWith(`${prefix}botinfo`)) {
+if (message.content.startsWith(`$botinfo`)) {
 message.channel.send({
 embed: new Discord.RichEmbed()
    .setAuthor(client.user.username,client.user.avatarURL)
