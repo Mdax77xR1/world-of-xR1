@@ -274,8 +274,6 @@ const bannedwords = [
     "الله يلعن",
     "قحبه",
     "خنيث"
-    "انيك",
-    "كل زق",
   ];
 
 client.on('message',  message => {
