@@ -727,6 +727,36 @@ client.on('message', message => {
 
 
 
+client.on('message',message =>{
+    var prefix = "$";
+    if(message.content.startsWith(prefix + 'topinvites')) {
+  message.guild.fetchInvites().then(i =>{
+  var invites = [];
+   
+  i.forEach(inv =>{
+    var [invs,i]=[{},null];
+     
+    if(inv.maxUses){
+        invs[inv.code] =+ inv.uses+"/"+inv.maxUses;
+    }else{
+        invs[inv.code] =+ inv.uses;
+    }
+        invites.push(`invite: ${inv.url} inviter: ${inv.inviter} \`${invs[inv.code]}\`;`);
+   
+  });
+  var embed = new Discord.RichEmbed()
+  .setColor("#000000")
+  .setDescription(`${invites.join(`\n`)+'\n\n**By:** '+message.author}`)
+  .setThumbnail("https://cdn.discordapp.com/attachments/342431945814441987/501394937884049419/pic-bot3.jpg")
+           message.channel.send({ embed: embed });
+   
+  });
+   
+    }
+  });
+
+
+
 
 
 
