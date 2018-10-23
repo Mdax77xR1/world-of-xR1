@@ -323,7 +323,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__�
 
 client.on('message', message => {
     let args = message.content.split(" ").slice(1);
-if (message.content.startsWith('clear')) {
+if (message.content.startsWith('$clear')) {
  let args = message.content.split(" ").slice(1)
     let messagecount = parseInt(args);
     if (args > 100) return message.reply("**🛑 || يجب ان يكون عدد المسح أقل من 100 .**").then(messages => messages.delete(5000))
