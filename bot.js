@@ -164,6 +164,28 @@ if (message.content.startsWith('السلام عليكم')){
 });
 
 
+
+
+client.on('message', message => {
+if (message.content.startsWith('رابط')){
+     let ra3d = new Discord.RichEmbed()
+  .setColor("#e9ab26")
+  .setDescription("**https://discord.gg/xVAwuTN**")
+     
+     
+  message.channel.sendEmbed(ra3d);
+    }
+});
+
+
+
+
+
+
+
+
+
+
 	
 
 
@@ -252,7 +274,8 @@ const bannedwords = [
     "الله يلعن",
     "قحبه",
     "خنيث"
-
+    "انيك",
+    "كل زق",
   ];
 
 client.on('message',  message => {
