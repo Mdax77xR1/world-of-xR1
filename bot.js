@@ -344,42 +344,6 @@ if (message.content.startsWith('clear')) {
  
   
  
- client.on('message', message => {
-    if (message.author.id === client.user.id) return;
-    if (message.guild) {
-   let embed = new Discord.RichEmbed()
-    let args = message.content.split(' ').slice(1).join(' ');
-if(message.content.split(' ')[0] == prefix + 'bc') {
-    if (!args[1]) {
-return;
-}
-        message.guild.members.forEach(m => {
-   if(!message.member.hasPermission('ADMINISTRATOR')) return;
-            var bc = new Discord.RichEmbed()
-            .addField(' » الرسالة : ', args)
-            .setColor('#ff0000')
-            // m.send(`[${m}]`);
-            m.send(`${m}`,{embed: bc});
-        });
-    }
-    } else {
-        return;
-    }
-});
-
- client.on("message", message => {
-
-            if (message.content.startsWith(prefix + "bc2")) {
-                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
-  let args = message.content.split(" ").slice(1);
-  var argresult = args.join(' '); 
-  message.guild.members.filter(m => m.presence.status !== 'all').forEach(m => {
- m.send(`${argresult}\n ${m}`);
-})
- message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'all').size}\` : عدد الاعضاء المستلمين`); 
- message.delete(); 
-};     
-});
  
  
  
@@ -567,37 +531,7 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return mess
 
 
 
-   
-
-
-
-
-  
-
-client.on('message', message => {
-if (message.content.startsWith(`${prefix}info`)) {
-message.channel.send({
-embed: new Discord.RichEmbed()
-   .setAuthor(client.user.username,client.user.avatarURL)
-   .setThumbnail(client.user.avatarURL)
-   .setColor('RANDOM')
-   .setTitle('``xR1`` ')
-   .addField('``My Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
-   .addField('``servers``', [client.guilds.size], true)
-   .addField('``channels``' , `[ ${client.channels.size} ]` , true)
-   .addField('``Users``' ,`[ ${client.users.size} ]` , true)
-   .addField('``My Name``' , `[ ${client.user.tag} ]` , true)
-   .addField('``My ID``' , `[ ${client.user.id} ]` , true)
-         .addField('``My Prefix``' , `[ prefix ]` , true)
-         .addField('``My Language``' , `[ JavaScript ]` , true)
-         .addField('``Bot Version``' , `[ v0.1 ]` , true)
-         .setFooter('By | <@335484868479811584 >')
-})
-}
-});
-
-
-
+ 
 
 
 
@@ -626,40 +560,7 @@ embed: new Discord.RichEmbed()
 
 
 
-client.on('message', message => {
-const prefix = "$";
-  if (message.author.kick) return;
-  if (!message.content.startsWith(prefix)) return;
- 
-  let command = message.content.split(" ")[0];
-  command = command.slice(prefix.length);
- 
-  let args = message.content.split(" ").slice(1);
- 
-  if (command == "kick") {
-               if(!message.channel.guild) return;
-         
-  if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return;
-  if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) return message.reply("**البوت لايمتلك صلاحيات**").then(msg => msg.delete(3000));
-  let user = message.mentions.users.first();
-  let reason = message.content.split(" ").slice(2).join(" ");
- 
-  if (message.mentions.users.size < 1) return message.reply("منشن الشخص").then(msg => msg.delete(3000));
-  if(!reason) return message.reply ("اكتب سبب الطرد");
-  if (!message.guild.member(user)
-  .bannable) return message.reply("لايمكنني طرد شخص أعلى من رتبتي").then(msg => msg.delete(3000));
- 
-  message.guild.member(user).kick(7, user);
- 
-  const banembed = new Discord.RichEmbed()
-  .setAuthor('Kicked', user.displayAvatarURL)
-  .setColor("#e9ab26")
-  .addField("**:busts_in_silhouette: المطرود**",  `**( ${user} )**`)
-  .addField("**:hammer:  تم بواسطة **", `**( ${message.author.tag} )**`)
-  .addField("**:book: السبب**", `**( ${reason} )**`)
-  client.channels.get("492467606129737728").send({embed : banembed})
-}
-});    
+
 
 
 
@@ -682,6 +583,9 @@ embed.addField(":cloud_tornado:  الاسم", `**[ ${msg.author.username}#${msg.
 msg.channel.send({embed: embed})
 }
 });
+
+
+
 
 client.on('message', message => {
                                 if(!message.channel.guild) return;
@@ -864,6 +768,60 @@ hours = 12;
     });
   }
 });
+
+
+
+
+ client.on('message', message => {
+        var prefix = "$";
+              if(!message.channel.guild) return;
+    if(message.content.startsWith(prefix + 'bc')) {
+    if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
+  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
+    let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
+    let copy = "Alpha Codes";
+    let request = `Requested By ${message.author.username}`;
+    if (!args) return message.reply('**يجب عليك كتابة كلمة او جملة لإرسال البرودكاست**');message.channel.send(`**هل أنت متأكد من إرسالك البرودكاست؟ \nمحتوى البرودكاست:** \` ${args}\``).then(msg => {
+    msg.react('✅')
+    .then(() => msg.react('❌'))
+    .then(() =>msg.react('✅'))
+   
+    let reaction1Filter = (reaction, user) => reaction.emoji.name === '✅' && user.id === message.author.id;
+    let reaction2Filter = (reaction, user) => reaction.emoji.name === '❌' && user.id === message.author.id;
+   
+    let reaction1 = msg.createReactionCollector(reaction1Filter, { time: 12000 });
+    let reaction2 = msg.createReactionCollector(reaction2Filter, { time: 12000 });
+ reaction1.on("collect", r => {
+    message.channel.send(`**☑ | Done ... The Broadcast Message Has Been Sent For __${message.guild.members.size}__ Members**`).then(m => m.delete(5000));
+    message.guild.members.forEach(m => {
+ 
+  var bc = new
+       Discord.RichEmbed()
+       .setColor('RANDOM')
+       .setTitle('Broadcast')
+       .addField('سيرفر', message.guild.name)
+       .addField('المرسل', message.author.username)
+       .addField('الرسالة', args)
+       .setThumbnail(message.author.avatarURL)
+       .setFooter(copy, client.user.avatarURL);
+    m.send({ embed: bc })
+    msg.delete();
+    })
+    })
+    reaction2.on("collect", r => {
+    message.channel.send(`**Broadcast Canceled.**`).then(m => m.delete(5000));
+    msg.delete();
+    })
+    })
+    }
+    });
+
+
+
+
+
+
+
 
 
 
