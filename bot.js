@@ -772,10 +772,9 @@ hours = 12;
 
 
 
- client.on('message', message => {
-        var prefix = "$";
+ client.on('message', message => {    
               if(!message.channel.guild) return;
-    if(message.content.startsWith(prefix + 'bc')) {
+    if(message.content.startsWith('$bc')) {
     if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
   if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
     let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
