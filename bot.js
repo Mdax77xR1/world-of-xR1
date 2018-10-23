@@ -321,34 +321,6 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__�
 
              
      
-client.on('message' , message => {
-if (message.content === '$help') {
-           if (!message.member.hasPermission('MANAGE_MESSAGES')) return;
-         let embed = new Discord.RichEmbed()
-
-      .setThumbnail(message.author.avatarURL)    
-      .addField("**۩ஜ▬▬▬▬▬▬✦ أوامر البوت ✦▬▬▬▬▬▬ஜ۩**","** **")
-      .addField("**❖ $mute <Mention> <reason>**","**لإعطاء الشخص ميوت**")
-      .addField("**❖ $unmute <Mention>**","**لفك الميوت **")
-      .addField("**❖ $clear [عددالرسائل]<Mention>**","**لمسح عدد معين من الرسائل **")
-      .addField("**❖ $bc <Message> **","**لأرسال البرودكاست**")
-      .addField("**❖ $mutechannel**","**لتقفيل الشات**")
-      .addField("**❖ $unmutechannel**","**لفتح الشات بعد تقفيله**")
-     .addField("**❖ $botinfo**","**لمعرفة معلومات البوت**")
-      .addField("**❖ $profile**","**معلومات شخصيه**")
-
-      .addField("**۩ஜ▬▬▬▬▬▬✦أوامر الالعاب✦▬▬▬▬▬▬ஜ۩**","** **")
-      .addField("**❖ $sara7a**","**لعبة صراحه**")
-      .addField("**❖ $rps**","**لعبة حجرة ورقة مقص**")
-      .addField("**❖ $[Soon]**","**لعبة كت  تويت**")
-      .addField("**۩ஜ▬▬▬▬▬▬✦Info✦▬▬▬▬▬▬ஜ۩**","** **")
-      .addField("**❖ --->**","**Made By : ! - Mdax .#0518**")
-      .addField("**❖ --->**","**Bot Server :https://discord.gg/Y9x7zqe**")
-
-    .setColor('#e9ab26')
-  message.author.sendEmbed(embed);
-    }
-});
 
 client.on('message', message => {
     let args = message.content.split(" ").slice(1);
@@ -363,10 +335,40 @@ if (message.content.startsWith('clear')) {
   });
 
 
+client.on('message' , message => {
+if (message.content === '$help') {
+           if (!message.member.hasPermission('MANAGE_MESSAGES')) return;
+         let embed = new Discord.RichEmbed()
 
+      .setThumbnail(message.author.avatarURL)    
+      .addField("**۩ஜ▬▬▬▬▬▬✦ أوامر البوت ✦▬▬▬▬▬▬ஜ۩**","** **")
+     .addField("**❖ $botinfo**","**لمعرفة معلومات البوت**")
+      .addField("**❖ $profile**","**معلومات شخصيه**")
+      .addField("**❖ $topinivtes**","**توب انفايت  **")
+      .addField("**❖ $ping**","**لمعرفة بنق البوت  **")
+      .addField("**❖ $avatar<Mention>**","**لرؤية صورة اي شخص**")
+.addField("**۩ஜ▬▬▬▬▬▬✦ (أامر البوت (للإدارة ✦▬▬▬▬▬▬ஜ۩**","** **")
+      .addField("**❖ $mutechannel**","**لتقفيل الشات**")
+      .addField("**❖ $unmutechannel**","**لفتح الشات بعد تقفيله**")
+      .addField("**❖ $bc <Message> **","**لأرسال البرودكاست**")
+      .addField("**❖ $mute <Mention> <reason>**","**لإعطاء الشخص ميوت**")
+      .addField("**❖ $unmute <Mention>**","**لفك الميوت **")
+      .addField("**❖ $clear [عددالرسائل]<Mention>**","**لمسح عدد معين من الرسائل **")
+      .addField("**❖ $giveaway**","**لعمل قيف اواي **")
+      .addField("**۩ஜ▬▬▬▬▬▬✦أوامر الالعاب✦▬▬▬▬▬▬ஜ۩**","** **")
+      .addField("**❖ $sara7a**","**لعبة صراحه**")
+      .addField("**❖ $rps**","**لعبة حجرة ورقة مقص**")
+      .addField("**❖ $[Soon]**","**لعبة كت  تويت**")
+      .addField("**۩ஜ▬▬▬▬▬▬✦Info✦▬▬▬▬▬▬ஜ۩**","** **")
+      .addField("**❖ --->**","**Made By : ! - Mdax .#0518**")
+      .addField("**❖ --->**","**Bot Server :https://discord.gg/Y9x7zqe**")
+
+    .setColor('#e9ab26')
+  message.author.sendEmbed(embed);
+    }
+});
  
   
- 
  
  
  
@@ -837,11 +839,6 @@ hours = 12;
     })
     }
     });
-
-
-
-
-
 
 
 
