@@ -758,9 +758,8 @@ client.on('message',message =>{
 
 
 
-const perfix = '$';
 client.on('message', msg => {
- if (msg.content.startsWith(prefix + 'send')) {
+ if (msg.content.startsWith('$send')) {
       let args = msg.content.split(' ').slice(1)
       if (!args[0]) return msg.reply(`**منشن الشخص اولا**`)
       if (!args[1]) return msg.reply(`**ما هي الرساله المطلوب ارسالها**`)
