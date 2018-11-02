@@ -288,7 +288,7 @@ client.on('message',  message => {
 
 client.on('message', message => {
  
-    if(message.content === prefix + "mutechannel") {
+    if(message.content === "$mutechannel") {
                         if(!message.channel.guild) return message.reply('** This command only for servers**');
  
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' **__ليس لديك صلاحيات__**');
@@ -300,7 +300,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' **__
            });
              }
 //FIRE BOT
- if(message.content === prefix + "unmutechannel") {
+ if(message.content === "$unmutechannel") {
                      if(!message.channel.guild) return message.reply('** This command only for servers**');
  
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__ليس لديك صلاحيات__**');
