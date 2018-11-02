@@ -319,6 +319,49 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__�
 
 
 
+
+
+
+client.on('message', msg => {
+  if(msg.content === '$hide') {
+    msg.guild.channels.forEach(c => {
+      c.overwritePermissions(msg.guild.id, {
+        SEND_MESSAGES: false,
+        READ_MESSAGES: false
+      })
+    })
+    msg.channel.send('.')
+  }
+})
+
+
+
+
+
+client.on('message', msg => {
+  if(msg.content === '$unhide') {
+    msg.guild.channels.forEach(c => {
+      c.overwritePermissions(msg.guild.id, {
+        SEND_MESSAGES: true,
+        READ_MESSAGES: true
+      })
+    })
+    msg.channel.send('.')
+  }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
              
      
 
@@ -426,7 +469,7 @@ reaction3.on("collect", r => {
 client.on('message', message => {
 if (message.content.startsWith("$ban")) {
     var mention = message.mentions.members.first();
-    if(!mention) return message.channel.send("يجب منشن العضو");
+    if (!args[0]) return msg.reply(`**منشن الشخص اولا**`)
 
     mention.ban("By: " + message.mentions.users.first);
     
@@ -655,8 +698,8 @@ client.on('message', message => {
 
 
 client.on('message',message =>{
-    var prefix = "+";
-    if(message.content.startsWith(prefix + 'topinv')) {
+    var prefix = "$";
+    if(message.content.startsWith(prefix + 'topinvites')) {
   message.guild.fetchInvites().then(i =>{
   var invites = [];
    
