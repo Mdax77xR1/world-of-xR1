@@ -301,7 +301,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' **__
            });
              }
 //xR1 Bot
-if (message.content.startsWith('$unmuetchannel')) {
+if (message.content.startsWith('$unmutechannel')) {
                      if(!message.channel.guild) return message.reply('** This command only for servers**');
  
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__ليس لديك صلاحيات__**');
