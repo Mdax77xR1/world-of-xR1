@@ -1,20 +1,4 @@
-Skip to content
  
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- @Mdax77xR1 Sign out
-0
-0 0 Mdax77xR1/world-of-xR1
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights  Settings
-world-of-xR1/bot.js
-d1af581  14 hours from now
-@Mdax77xR1 Mdax77xR1 Update bot.js
-     
-851 lines (658 sloc)  30.9 KB
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = '.'
