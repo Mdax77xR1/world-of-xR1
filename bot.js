@@ -654,8 +654,33 @@ client.on('message', message => {
 
 
 
-
-
+client.on('message',message =>{
+    var prefix = "+";
+    if(message.content.startsWith(prefix + 'topinv')) {
+  message.guild.fetchInvites().then(i =>{
+  var invites = [];
+   
+  i.forEach(inv =>{
+    var [invs,i]=[{},null];
+     
+    if(inv.maxUses){
+        invs[inv.code] =+ inv.uses+"/"+inv.maxUses;
+    }else{
+        invs[inv.code] =+ inv.uses;
+    }
+        invites.push(`invite: ${inv.url} inviter: ${inv.inviter} \`${invs[inv.code]}\`;`);
+   
+  });
+  var embed = new Discord.RichEmbed()
+  .setColor("#000000")
+  .setDescription(`${invites.join(`\n`)+'\n\n**By:** '+message.author}`)
+  .setThumbnail("https://cdn.discordapp.com/avatars/500704774677856266/53f1ec7e75d3e1164431da77880aa195.png?size=2048")
+           message.channel.send({ embed: embed });
+   
+  });
+   
+    }
+  });
 
 
 
