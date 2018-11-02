@@ -1,7 +1,7 @@
- 
+
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = '$'
+const prefix = '.'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -648,10 +648,9 @@ client.on('message', message => {
       message.channel.sendEmbed(embed);
     }
 });
-//packages//
-// npm i array-sort
 
-const arraySort = require('array-sort'),
+
+
       table = require('table');
 
 client.on('message' , async (message) => {
