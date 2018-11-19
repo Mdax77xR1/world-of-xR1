@@ -28,6 +28,7 @@
     "sqlite3": "^4.0.0",
     "youtube-info": "^1.2.0",
     "ytdl-core": "^0.20.3"
+    "util": "0.11.1",
   },
   "engines": {
     "node": "8.4.0"
