@@ -951,4 +951,67 @@ Dat = currentTime.getDate()
 
 
 
+
+
+client.on('guildMemberAdd', Ammar=> {
+    var embed = new Discord.RichEmbed()
+    .setAuthor(Ammar.user.username, Ammar.user.avatarURL)
+    .setThumbnail(Ammar.user.avatarURL)
+    .setImage('https://cdn.discordapp.com/attachments/492862340484694027/493771573740830740/welcome1.png') //هنا حط الصوره الي تبيها
+    .setTitle('عضو جديد!')
+    .setDescription('مرحبا بك بالسيرفر')
+    .addField('``ايدي العضو``:',"" +  Ammar.user.id, true)
+    .addField('``تاق العضو``', Ammar.user.discriminator, true)
+    .addField('``تم الانشاء في``', Ammar.user.createdAt, true)
+    .addField(' 👤  انت رقم',`**[ ${Ammar.guild.memberCount} ]**`,true)
+    .setColor('RANDOM')
+    .setFooter(Ammar.guild.name, Ammar.guild.iconURL, true)
+    var channel =Ammar.guild.channels.find('name', '【welcome】') // هنا حط اسم الروم الي تبيه يكتب فيه
+    if (!channel) return;
+    channel.send({embed : embed});
+    });
+
+const invites = {};
+
+const wait = require('util').promisify(setTimeout);
+
+client.on('ready', () => {
+  wait(1000);
+
+  client.guilds.forEach(g => {
+    g.fetchInvites().then(guildInvites => {
+      invites[g.id] = guildInvites;
+    });
+  });
+});
+
+client.on('guildMemberAdd', member => {
+  member.guild.fetchInvites().then(guildInvites => {
+    const ei = invites[member.guild.id];
+    invites[member.guild.id] = guildInvites;
+    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+    const inviter = client.users.get(invite.inviter.id);
+    const logChannel = member.guild.channels.find(channel => channel.name === "✽-welcome"); // اسم الروم
+    logChannel.send(`Invited by: < @${inviter.tag} >`);
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 client.login(process.env.BOT_TOKEN);
