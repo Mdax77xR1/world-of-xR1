@@ -11,7 +11,7 @@ client.user.setGame(`صيآنة`,"http://twitch.tv/S-F")
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
   console.log(`[Start] ${new Date()}`);
   console.log('╚[═════════════════════════════════════════════════════════════════]╝')
-  console.log('')
+  console.log('Mdax')
   console.log('╔[════════════════════════════════════]╗');
   console.log(`Logged in as * [ " ${client.user.username} " ]`);
   console.log('')
@@ -23,7 +23,7 @@ client.user.setGame(`صيآنة`,"http://twitch.tv/S-F")
   console.log('╚[════════════════════════════════════]╝')
   console.log('')
   console.log('╔[════════════]╗')
-  console.log(' Bot Is Online')
+  console.log('Fuck OFF')
   console.log('╚[════════════]╝')
   console.log('')
   console.log('')
@@ -1027,7 +1027,7 @@ client.on("message", (message) => {
   if (message.author.bot) return;
     if (message.author.id === client.user.id) return;
     if(!message.channel.guild) return;
-if (message.content.startsWith(prefix + 'credit')) {
+if (message.content.startsWith('$credit')) {
   if(men) {
   if (!profile[men.id]) profile[men.id] = {
    lastDaily:'Not Collected',
@@ -1040,7 +1040,7 @@ message.channel.send(`** ${men.username}, :credit_card: balance` + " is `" + `${
  message.channel.send(`** ${message.author.username}, your :credit_card: balance` + " is `" + `${profile[message.author.id].credits}$` + "`.**")
 }
 }
-if(message.content.startsWith(prefix + "daily")) {
+if(message.content.startsWith("$daily")) {
  
  
   if(profile[message.author.id].lastDaily != moment().format('day')) {
@@ -1054,7 +1054,7 @@ if(message.content.startsWith(prefix + "daily")) {
 let cont = message.content.slice(prefix.length).split(" ");
 let args = cont.slice(2);
 let sender = message.author
-if(message.content.startsWith(prefix + 'trans')) {
+if(message.content.startsWith('$trans')) {
 if (!args[0]) {message.channel.send(`**Usage: ${prefix}trans @someone amount**`);
          return;
            }
