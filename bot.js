@@ -1060,7 +1060,7 @@ if(message.content.startsWith(prefix + "daily")) {
    profile[message.author.id].credits += 99999999
     message.channel.send(`:atm: |**${message.author.username} you collect your \`99999999\` :yen: daily credits!**`)
 } else {
-    message.channel.send(`**:stopwatch: | ${message.author.username}, your daily :yen: credits refreshes ${moment().endOf('1m').fromNow()}**`)
+    message.channel.send(`**:stopwatch: | ${message.author.username}, your daily :yen: credits refreshes ${moment().endOf('1sec').fromNow()}**`)
 }
 }
 let cont = message.content.slice(prefix.length).split(" ");
