@@ -1055,12 +1055,12 @@ message.channel.send(`** ${men.username}, :credit_card: balance` + " is `" + `${
 if(message.content.startsWith(prefix + "daily")) {
  
  
-  if(profile[message.author.id].lastDaily != moment().format('1m')) {
-   profile[message.author.id].lastDaily = moment().format('1m')
-   profile[message.author.id].credits += 99999999
-    message.channel.send(`:atm: |**${message.author.username} you collect your \`99999999\` :yen: daily credits!**`)
+  if(profile[message.author.id].lastDaily != moment().format('1day')) {
+   profile[message.author.id].lastDaily = moment().format('1day')
+   profile[message.author.id].credits += 310
+    message.channel.send(`:atm: |**${message.author.username} you collect your \`310\` :yen: daily credits!**`)
 } else {
-    message.channel.send(`**:stopwatch: | ${message.author.username}, your daily :yen: credits refreshes ${moment().endOf('1sec').fromNow()}**`)
+    message.channel.send(`**:stopwatch: | ${message.author.username}, your daily :yen: credits refreshes ${moment().endOf('1day').fromNow()}**`)
 }
 }
 let cont = message.content.slice(prefix.length).split(" ");
