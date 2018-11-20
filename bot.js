@@ -35,30 +35,6 @@ client.user.setGame(`صيآنة`,"http://twitch.tv/S-F")
 
 
 
-
-
-client.on('ready', function(){    
-    var ms = 40000 ;    
-    var setGame = [`Made By : Mdax`,"$help"];    
-    var i = -1;    
-    var j = 0;    
-    setInterval(function (){    
-        if( i == -1 ){    
-j = 1;    
-       }    
-        if( i == (setGame.length)-1 ){    
-            j = -1;    
-      }    
-       i = i+j;    
-        client.user.setGame(setGame[i],`http://twitch.tv/S-F`);    
-}, ms);    
-    
-});
-
-
-
-
-
 client.on('message', msg => {
   if (msg.content === 'السعودية') {      
     msg.react("🇸🇦")
@@ -999,7 +975,7 @@ client.on('guildMemberAdd', member => {
 
 
 
-const adminprefix = "-";
+const adminprefix = "$";
 const devs = ['500704774677856266','500704774677856266'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
