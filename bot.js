@@ -2,16 +2,19 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = '$'
-
+const tpoints = {};
+const vpoints = {};
+const jimp = require("jimp");
+const client = new Discord.Client();
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`صيآنة`,"http://twitch.tv/S-F")
+ client.user.setActivity("",{type: 'watching'})
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
   console.log(`[Start] ${new Date()}`);
   console.log('╚[═════════════════════════════════════════════════════════════════]╝')
-  console.log('Mdax')
+  console.log('')
   console.log('╔[════════════════════════════════════]╗');
   console.log(`Logged in as * [ " ${client.user.username} " ]`);
   console.log('')
@@ -23,13 +26,11 @@ client.user.setGame(`صيآنة`,"http://twitch.tv/S-F")
   console.log('╚[════════════════════════════════════]╝')
   console.log('')
   console.log('╔[════════════]╗')
-  console.log('Fuck OFF')
+  console.log(' Bot Is Online')
   console.log('╚[════════════]╝')
   console.log('')
   console.log('')
 });
-
-
 
 
 
