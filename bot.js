@@ -976,7 +976,7 @@ client.on('guildMemberAdd', member => {
 
 
 const adminprefix = "$";
-const devs = ['500704774677856266','500704774677856266'];
+const devs = ['335484868479811584','335484868479811584'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
