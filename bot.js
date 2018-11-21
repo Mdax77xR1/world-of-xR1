@@ -1179,11 +1179,11 @@ client.on('message', message => {
  
 if(!message.guild) return
   if(!ar[message.guild.id]) ar[message.guild.id] = {
-  onoff: 'Off',
+  onoff: 'On',
   role: '• Members '
   }
  
-if(message.content.startsWith(`$autorole`)) {
+if(message.content.startsWith(`!autorole`)) {
          
   let perms = message.member.hasPermission(`MANAGE_ROLES`)
  
