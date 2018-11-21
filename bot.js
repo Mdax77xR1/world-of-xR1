@@ -1183,7 +1183,7 @@ if(!message.guild) return
   role: '• Members '
   }
  
-if(message.content.startsWith(`!autorole`)) {
+if(message.content.startsWith(`$autorole`)) {
          
   let perms = message.member.hasPermission(`MANAGE_ROLES`)
  
