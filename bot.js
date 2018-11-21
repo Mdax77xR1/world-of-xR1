@@ -1179,7 +1179,7 @@ client.on('message', message => {
  
 if(!message.guild) return
   if(!ar[message.guild.id]) ar[message.guild.id] = {
-  onoff: 'On',
+  onoff: 'Off',
   role: '• Members '
   }
  
