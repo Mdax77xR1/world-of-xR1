@@ -1401,7 +1401,7 @@ client.on('message', message=> {
     if (message.author.bot) return;
     if (message.isMentioned(client.user))
     {
-    message.reply("عزيزي المستخدم إن البوت المطلوب مشغول الرجاء المحاولة في وقت لآحق");
+    message.reply("عزيزي المستخدم إن البوت المطلوب مشغول حاليآ الرجاءمعاودة المحاولة في وقت لآحق");
     }
 });
 
