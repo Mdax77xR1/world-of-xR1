@@ -1,5 +1,6 @@
 
 const Discord = require('discord.js');
+const prefix = "$";
 const tpoints = {};
 const fs = require("fs");
 const vpoints = {};
@@ -1144,9 +1145,7 @@ client.on ("guildMemberRemove", member => {
 
 
 
-let points = JSON.parse(fs.readFileSync('./fkkPTS.json', 'utf8'));
-const prefix = "$";
- 
+let points = JSON.parse(fs.readFileSync('./fkkPTS.json', 'utf8')); 
 client.on('message', message => {
 if (!points[message.author.id]) points[message.author.id] = {
     points: 0,
@@ -1204,7 +1203,104 @@ if (message.content.startsWith(prefix + 'نقاطي')) {
 
 
 
-
+const fs = require('fs')
+let speard = JSON.parse(fs.readFileSync('./speard.json' , 'utf8'));
+client.on('message', message => {
+    if(message.content.startsWith(prefix + "toggleSpeard")) {
+        if(!message.channel.guild) return message.reply('**This Command Only For Servers**');
+        if(!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('**Sorry But You Dont Have Permission** `MANAGE_GUILD`' );
+        if(!speard[message.guild.id]) speard[message.guild.id] = {
+          onoff: 'Off'
+        }
+          if(speard[message.guild.id].onoff === 'Off') return [message.channel.send(`**✅ The Antispeard Is __𝐎𝐍__ !**`), speard[message.guild.id].onoff = 'On']
+          if(speard[message.guild.id].onoff === 'On') return [message.channel.send(`**⛔ The Antispeard Is __𝐎𝐅𝐅__ !**`), speard[message.guild.id].onoff = 'Off']
+          fs.writeFile("./speard.json", JSON.stringify(speard), (err) => {
+            if (err) console.error(err)
+            .catch(err => {
+              console.error(err);
+          });
+            });
+          }
+         
+        })
+    client.on('message', message => {
+    var args = message.content.split(/[ ]+/)
+    if(message.content.includes('http://www.gmail.com/')){
+        if(speard[message.guild.id].onoff === 'Off') return;
+        message.delete()
+    return message.reply(`**⛔ The Antispeard ON ! So You Cant speard Here !**`)
+    }
+});
+ 
+client.on('message', message => {
+    var args = message.content.split(/[ ]+/)
+    if(message.content.includes('https://www.snapchat.com/')){
+        if(speard[message.guild.id].onoff === 'Off') return;
+        message.delete()
+    return message.reply(`**⛔ The Antispeard ON ! So You Cant speard Here !**`)
+    }
+});
+ 
+ 
+client.on('message', message => {
+    var args = message.content.split(/[ ]+/)
+    if(message.content.includes('https://www.instagram.com/')){
+        if(speard[message.guild.id].onoff === 'Off') return;
+        message.delete()
+    return message.reply(`**⛔ The Antispeard ON ! So You Cant speard Here !**`)
+    }
+});
+ 
+ 
+client.on('message', message => {
+    var args = message.content.split(/[ ]+/)
+    if(message.content.includes('https://www.twitter.com/')){
+        if(speard[message.guild.id].onoff === 'Off') return;
+        message.delete()
+    return message.reply(`**⛔ The Antispeard ON ! So You Cant speard Here !**`)
+    }
+});
+ 
+ 
+client.on('message', message => {
+    var args = message.content.split(/[ ]+/)
+    if(message.content.includes('http://www.facebook.com/')){
+        if(speard[message.guild.id].onoff === 'Off') return;
+        message.delete()
+    return message.reply(`**⛔ The Antispeard ON ! So You Cant speard Here !**`)
+    }
+});
+ 
+ 
+ 
+client.on('message', message => {
+    var args = message.content.split(/[ ]+/)
+    if(message.content.includes('https://www.youtube.com/')){
+        if(speard[message.guild.id].onoff === 'Off') return;
+        message.delete()
+    return message.reply(`**⛔ The Antispeard ON ! So You Cant speard Here !**`)
+    }
+ 
+});
+ 
+client.on('message', message => {
+    var args = message.content.split(/[ ]+/)
+    if(message.content.includes('https://www.discordapp.com/')){
+        if(speard[message.guild.id].onoff === 'Off') return;
+        message.delete()
+    return message.reply(`**⛔ The Antispeard ON ! So You Cant speard Here !**`)
+    }
+ 
+});
+client.on('message', message => {
+    var args = message.content.split(/[ ]+/)
+    if(message.content.includes('https://discord.gg/')){
+        if(speard[message.guild.id].onoff === 'Off') return;
+        message.delete()
+    return message.reply(`**⛔ The Antispeard ON ! So You Cant speard Here !**`)
+    }
+ 
+});
 
 
 
