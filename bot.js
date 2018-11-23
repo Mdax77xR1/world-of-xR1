@@ -1313,6 +1313,39 @@ Dat = currentTime.getDate()
 
 
 
+client.on('message',async message => {
+    if(message.content.startsWith("$setdate")) {
+        var currentTime = new Date(),
+        years = currentTime.getFullYear(),
+        month = currentTime.getMonth() + 1,
+        day = currentTime.getDate(),
+        week = currentTime.getDay();
+    if(!message.guild.member(message.author).hasPermissions('MANAGE_CHANNELS')) return message.reply('❌ **No Permission No Command**');
+    if(!message.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS','MANAGE_ROLES_OR_PERMISSIONS'])) return message.reply('❌ **I Dont have Permissions**');
+    message.channel.send('✅| **Room is Successfully Created**');
+    message.guild.createChannel("📅 - Date " + "「" + day + "-" + month + "-" + years + "」" , 'voice').then(c => {
+      console.log(`Date channel setup for guild: \n ${message.guild.name}`);
+      c.overwritePermissions(message.guild.id, {
+        CONNECT: false,
+        SPEAK: false
+      });
+      setInterval(function() {
+        c.setName("📅 - Date " + "「" + day + "-" + month + "-" + years + "」")
+      },1000);
+    });
+    }
+  });
+
+
+
+
+
+
+
+
+
+
+
 
 
 
