@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 const prefix = "$";
 const tpoints = {};
 const fs = require("fs");
+const fs = require("onoff");
 const vpoints = {};
 const jimp = require("jimp");
 const client = new Discord.Client();
