@@ -1172,6 +1172,36 @@ if (message.content.startsWith(prefix + 'نقاطي')) {
 
 
 
+client.on('ready', function(){    
+    var ms = 40000 ;    
+    var setGame = ["الآحترآم لآيصلح للجميع ف البعض لآيقتع حتى يهانء"];    
+    var i = -1;    
+    var j = 0;    
+    setInterval(function (){    
+        if( i == -1 ){    
+j = 1;    
+       }    
+        if( i == (setGame.length)-1 ){    
+            j = -1;    
+      }    
+       i = i+j;    
+        client.user.setGame(setGame[i],`http://twitch.tv/S-F`);    
+}, ms);    
+    
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
