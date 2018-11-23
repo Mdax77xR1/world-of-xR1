@@ -1,9 +1,7 @@
 
 const Discord = require('discord.js');
-const prefix = "$";
 const tpoints = {};
 const fs = require("fs");
-const fs = require("onoff");
 const vpoints = {};
 const jimp = require("jimp");
 const client = new Discord.Client();
@@ -1205,6 +1203,8 @@ if (message.content.startsWith(prefix + 'نقاطي')) {
 
 
 let speard = JSON.parse(fs.readFileSync('./speard.json' , 'utf8'));
+const prefix = "$";
+
 client.on('message', message => {
     if(message.content.startsWith(prefix + "toggleSpeard")) {
         if(!message.channel.guild) return message.reply('**This Command Only For Servers**');
