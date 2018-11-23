@@ -1203,7 +1203,6 @@ if (message.content.startsWith(prefix + 'نقاطي')) {
 
 
 
-const fs = require('fs')
 let speard = JSON.parse(fs.readFileSync('./speard.json' , 'utf8'));
 client.on('message', message => {
     if(message.content.startsWith(prefix + "toggleSpeard")) {
