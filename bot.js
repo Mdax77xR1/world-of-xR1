@@ -1,6 +1,5 @@
 
 const Discord = require('discord.js');
-const prefix = '$'
 const tpoints = {};
 const vpoints = {};
 const jimp = require("jimp");
@@ -1117,6 +1116,8 @@ client.on ("guildMemberRemove", member => {
 
 
 let points = JSON.parse(fs.readFileSync('./fkkPTS.json', 'utf8'));
+const prefix = '$'
+
  
 client.on('message', message => {
 if (!points[message.author.id]) points[message.author.id] = {
