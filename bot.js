@@ -1116,14 +1116,13 @@ client.on ("guildMemberRemove", member => {
 
 
 let points = JSON.parse(fs.readFileSync('./fkkPTS.json', 'utf8'));
-const prefix = '$'
-
+const prefix = "$";
  
 client.on('message', message => {
 if (!points[message.author.id]) points[message.author.id] = {
     points: 0,
   };
-if (message.content.startsWith('$فكك')) {
+if (message.content.startsWith(prefix + 'فكك')) {
     if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
  
 const type = require('./fkk.json');
@@ -1151,7 +1150,7 @@ msg.channel.send(`${item.type}`).then(() => {
 }
 });
 client.on('message', message => {
-if (message.content.startsWith('$نقاطي')) {
+if (message.content.startsWith(prefix + 'نقاطي')) {
     if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
     let userData = points[message.author.id];
     let embed = new Discord.RichEmbed()
@@ -1164,8 +1163,6 @@ if (message.content.startsWith('$نقاطي')) {
     if (err) console.error(err)
   })
 });
-
-
 
 
 
