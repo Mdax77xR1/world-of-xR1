@@ -322,6 +322,18 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__�
 
 
 
+lient.on('message', message => {
+if (message.content.startsWith('ا ن ا ه ط ف')){
+     let ra3d = new Discord.RichEmbed()
+  .setColor("#e9ab26")
+  .setDescription("**أيه أنشهد لك**")
+     
+     
+  message.channel.sendEmbed(ra3d);
+    }
+});
+
+
 
 
 client.on('message', msg => {
