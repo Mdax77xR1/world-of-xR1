@@ -507,7 +507,7 @@ client.on('message', function(message) {
             .setThumbnail(`${message.author.avatarURL}`)
             .setDescription(`\n\n\`\`\`${message.content}\`\`\``)
             .setFooter(`من (@${message.author.tag})  |  (${message.author.id})`)
-        client.channels.get("501121173598371844").send({ embed: stewart });
+        client.channels.get("515676514667200522").send({ embed: stewart });
     }
 });
 
