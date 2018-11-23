@@ -409,6 +409,7 @@ if (message.content === '$help') {
       .addField("**❖ $sara7a**","**لعبة صراحه**")
       .addField("**❖ $rps**","**لعبة حجرة ورقة مقص**")
       .addField("**❖ $cuttwet**","**لعبة كت  تويت**")
+      .addField("**❖  $فكك**","**لعبة فكك **")
       .addField("**۩ஜ▬▬▬▬▬▬✦Info✦▬▬▬▬▬▬ஜ۩**","** **")
       .addField("**❖ --->**","**Made By : ! - Mdax .#0518**")
       .addField("**❖ --->**","**Bot Server :https://discord.gg/Y9x7zqe**")
@@ -1381,7 +1382,6 @@ client.on('message',async message => {
     });
     }
   });
-
 
 
 
