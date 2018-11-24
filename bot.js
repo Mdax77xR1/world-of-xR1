@@ -1414,10 +1414,9 @@ client.on('message', message=> {
 
 
 
- var prefix = "$"
     client.on('message', message => {
       if (message.author.x5bz) return;
-      if (!message.content.startsWith(prefix)) return;
+      if (!message.content.startsWith($ban)) return;
      
       let command = message.content.split(" ")[0];
       command = command.slice(prefix.length);
