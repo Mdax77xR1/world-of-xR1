@@ -1238,35 +1238,6 @@ client.on('message', message => {
  
  
  
-client.on('message', message => {
-    var args = message.content.split(/[ ]+/)
-    if(message.content.includes('https://www.youtube.com/')){
-        if(speard[message.guild.id].onoff === 'Off') return;
-        message.delete()
-    return message.reply(`**⛔ The Antispeard ON ! So You Cant speard Here !**`)
-    }
- 
-});
- 
-client.on('message', message => {
-    var args = message.content.split(/[ ]+/)
-    if(message.content.includes('https://www.discordapp.com/')){
-        if(speard[message.guild.id].onoff === 'Off') return;
-        message.delete()
-    return message.reply(`**⛔ The Antispeard ON ! So You Cant speard Here !**`)
-    }
- 
-});
-client.on('message', message => {
-    var args = message.content.split(/[ ]+/)
-    if(message.content.includes('https://discord.gg/')){
-        if(speard[message.guild.id].onoff === 'Off') return;
-        message.delete()
-    return message.reply(`**⛔ The Antispeard ON ! So You Cant speard Here !**`)
-    }
- 
-});
-
 
 
 
