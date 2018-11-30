@@ -1,7 +1,6 @@
 
 const Discord = require('discord.js');
 const fs = require("fs");
-const vpoints = require("vpoints");
 const jimp = require("jimp");
 const client = new Discord.Client();
 client.on('ready', () => {
