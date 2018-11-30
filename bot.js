@@ -1,6 +1,5 @@
 
 const Discord = require('discord.js');
-const tpoints = {};
 const fs = require("fs");
 const vpoints = {};
 const jimp = require("jimp");
