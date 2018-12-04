@@ -168,19 +168,6 @@ if (message.content.startsWith('رابط')){
 });
 
 
-
-
-
-
-
-
-
-
-	
-
-
-	
-
 const Sra7a = [
     'صراحه  |  صوتك حلوة؟',
     'صراحه  |  التقيت الناس مع وجوهين؟',
@@ -307,16 +294,6 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__�
 
 
 
-client.on('message', message => {
-if (message.content.startsWith('انا هطف')){
-     let ra3d = new Discord.RichEmbed()
-  .setColor("#e9ab26")
-  .setDescription("**أيه أنشهد لك**")
-     
-     
-  message.channel.sendEmbed(ra3d);
-    }
-});
 
 
 
@@ -329,7 +306,7 @@ client.on('message', msg => {
         READ_MESSAGES: false
       })
     })
-    msg.channel.send('تم إخفاء الرومات')
+    msg.channel.send('.')
   }
 })
 
@@ -345,20 +322,9 @@ client.on('message', msg => {
         READ_MESSAGES: true
       })
     })
-    msg.channel.send('تم إظهار الرومات')
+    msg.channel.send('.')
   }
 })
-
-
-
-
-
-
-
-
-
-
-
 
 
              
@@ -532,7 +498,6 @@ client.on('guildMemberRemove', member => {
 
 
 
- 
 
 
 
@@ -557,8 +522,6 @@ embed: new Discord.RichEmbed()
 })
 }
 });
-
-
 
 
 
@@ -660,22 +623,6 @@ client.on('message',message =>{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  client.on('message', message => {    
               if(!message.channel.guild) return;
     if(message.content.startsWith('$bc')) {
@@ -724,12 +671,6 @@ client.on('message',message =>{
 
 
 
-
-
-
-
-
-
 client.on('guildMemberAdd', member => {
   member.guild.fetchInvites().then(guildInvites => {
     const ei = invites[member.guild.id];
@@ -740,25 +681,6 @@ client.on('guildMemberAdd', member => {
    //  stewart.send(`<@${member.user.id}> joined using invite code ${invite.code} from <@${inviter.id}>. Invite was used ${invite.uses} times since its creation.`);
   }); 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -804,10 +726,6 @@ client.on('guildMemberAdd', member => {
     logChannel.send(`Invited by: < @${inviter.tag} >`);
   });
 });
-
-
-
-
 
 
 
@@ -906,26 +824,6 @@ if (message.content.startsWith(prefix + 'نقاطي')) {
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-        
-  
- 
- 
-
-
-
-
-
 client.on('message',async msg => {
   var p = "$";
   if(msg.content.startsWith(p + "user")) {
@@ -946,7 +844,6 @@ Dat = currentTime.getDate()
   });
   }
 });
-
 
 
 
@@ -974,8 +871,6 @@ client.on('message',async message => {
     });
     }
   });
-
-
 
 
 
@@ -1035,11 +930,6 @@ client.on('message', message=> {
 
 
 
-
-
-
-
-
 client.on('message', message => {
 
   if (message.author.bot) return;
@@ -1075,14 +965,6 @@ if (command == "Esay") {
 
 
 
-
-
-
-
-
-
-
-
 client.on('message', msg => {
     if(msg.author.bot) return;
     
@@ -1106,12 +988,6 @@ client.on('message', msg => {
     }
     
   })
-
-
-
-
-
-
 
 
 client.on("message", message => {
