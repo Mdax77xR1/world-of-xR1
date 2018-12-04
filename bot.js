@@ -389,7 +389,6 @@ if (message.content === '$help') {
       .addField("**❖ $topinivtes**","**توب انفايت  **")
       .addField("**❖ $ping**","**لمعرفة بنق البوت  **")
       .addField("**❖ $avatar<Mention>**","**لرؤية صورة اي شخص**")
-      .addField("**❖ $help**","**لرؤية جميع اوامر البوت **")
       .addField("**❖ $inv  **","**لإضافة البوت إلى سيرفرك **")
       .addField("**۩ஜ▬▬▬▬▬▬✦ (أوامر البوت (للإدارة ✦▬▬▬▬▬▬ஜ۩**","** **")
       .addField("**❖ $mutechannel**","**لتقفيل الشات**")
