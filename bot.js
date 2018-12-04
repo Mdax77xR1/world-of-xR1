@@ -1,6 +1,5 @@
 
 const Discord = require('discord.js');
-const db = require('quick.db');  
 const hastebin = require('hastebin-gen');  
 const Canvas = require('canvas');        
 const fs = require("fs"); 
