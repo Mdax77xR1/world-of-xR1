@@ -2,7 +2,6 @@
 const Discord = require('discord.js');
 const db = require('quick.db');  
 const hastebin = require('hastebin-gen');  
-const client = new Discord.Client();    
 const Canvas = require('canvas');        
 const fs = require("fs"); 
 const getYoutubeID = require('get-youtube-id'); 
