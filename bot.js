@@ -402,7 +402,7 @@ if (message.content === '$help') {
  
  
  
- 
+
 
 
 client.on("message", function(message) {
@@ -447,11 +447,6 @@ reaction3.on("collect", r => {
 });
 
 
-
-
-
-
-
 client.on('message', function(message) {
     if (message.channel.type === "dm") {
         if (message.author.id === client.user.id) return;
@@ -465,13 +460,6 @@ client.on('message', function(message) {
         client.channels.get("515676514667200522").send({ embed: stewart });
     }
 });
-
-
-
-
-
-
-
 
 
 
@@ -516,8 +504,6 @@ client.on('message', message => {
 
 
 
-
-
 client.on('message', message => {
 	var prefix = "$"
   if (message.author.x5bz) return;
@@ -556,20 +542,6 @@ client.on('message', message => {
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 client.on('message', message => {
     let prefix = '$';
     
@@ -602,14 +574,6 @@ client.on('guildMemberRemove', member => {
        member.guild.owner.send(`في واحد خرج من سيرفرك وهو مسوي نفسه غامض اوف لاين :eyes: `)
 }
 });
-
-
-
-
-
-
-
-
 
 
 client.on('message', message => {
@@ -703,7 +667,6 @@ client.on('message', message => {
 
 
 
-
 client.on('message',message =>{
     var prefix = "$";
     if(message.content.startsWith(prefix + 'topinvites')) {
@@ -776,10 +739,6 @@ client.on('message',message =>{
     })
     }
     });
-
-
-
-
 
 
 client.on('guildMemberAdd', member => {
@@ -1119,9 +1078,6 @@ client.on("message", message => {
 
 
 
-
-
-
 client.on('message', message => {
     if(message.content.startsWith('$mvall')) {
      if (!message.member.hasPermission("MOVE_MEMBERS")) return message.channel.send('**:x: You Dont Have Perms `MOVE_MEMBERS`**');
@@ -1137,17 +1093,6 @@ client.on('message', message => {
 
      }
        });
-
-
-
-
-
-
-
-
-
-
-
 
 
 client.on('message', async message =>{
@@ -1209,10 +1154,6 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return m
 
 });
  
-
-
-
-
 
 
 client.on("guildMemberAdd", async member => {
