@@ -369,19 +369,34 @@ if (message.content === '$help') {
       .addField("**❖ $setTime <Message> **","**يسوي لك روم و يقلك كم الساعه **")
       .addField("**❖ $kv <Mention> **","** لطرد شخص من روم صوتي **")
       .addField("**❖ $mvall**","**لسحب الجميع إلى الروم الصوتي **")
-      .addField("**۩ஜ▬▬▬▬▬▬✦أوامر الالعاب✦▬▬▬▬▬▬ஜ۩**","** **")
-      .addField("**❖ $sara7a**","**لعبة صراحه**")
-      .addField("**❖ $rps**","**لعبة حجرة ورقة مقص**")
-      .addField("**❖ $cuttwet**","**لعبة كت  تويت**")
-      .addField("**❖  $فكك**","**لعبة فكك **")
+      .addField("**❖ $ban<Mention>**","**لبتنيد اي شخص تبيه**")
+      .addField("**❖ $mute<Mention>**","**لإعطاء ميوت لأي شخص**")
+      .addField("**❖ $kick<Mention>**","**لطرد اي شخص من السيرفر**")
+      .addField("**❖ $say**","**يكرر كلامك بدون امبد**")
 
-    .setColor('#e9ab26')
+    .setColor('RANDOM')
   message.author.sendEmbed(embed);
     }
 });
  
   
  
+client.on('message' , message => {
+if (message.content === '$help') {
+           if (!message.member.hasPermission('MANAGE_MESSAGES')) return;
+         let embed = new Discord.RichEmbed()
+
+      .setThumbnail(message.author.avatarURL)    
+      .addField("**۩ஜ▬▬▬▬▬▬✦أوامر الالعاب✦▬▬▬▬▬▬ஜ۩**","** **")
+      .addField("**❖ $sara7a**","**لعبة صراحه**")
+      .addField("**❖ $rps**","**لعبة حجرة ورقة مقص**")
+      .addField("**❖ $cuttwet**","**لعبة كت  تويت**")
+      .addField("**❖  $فكك**","**لعبة فكك **")
+
+    .setColor('RANDOM')
+  message.author.sendEmbed(embed);
+    }
+});
  
  
  
