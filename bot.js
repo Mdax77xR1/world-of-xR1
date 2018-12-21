@@ -3,12 +3,6 @@ const Discord = require('discord.js');
 const fs = require("fs"); 
 const jimp = require('jimp');
 const type = require('type');
- const pretty = require('pretty-ms') 
-,ti={}  
-,spee={}; 
-
-
-
 var prefix = "$"
 const client = new Discord.Client();
 client.on('ready', () => {
