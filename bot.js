@@ -942,7 +942,7 @@ if (command == "Esay") {
 
     .setDescription(args.join(" "))
 
-    .setColor(RANDOM)
+    .setColor(#e9ab26)
 
     message.channel.sendEmbed(say);
 
