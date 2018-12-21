@@ -1,7 +1,8 @@
 
 const Discord = require('discord.js');
 const fs = require("fs"); 
-const jimp = require('jimp');   
+const jimp = require('jimp');
+,spee={};    
 var prefix = "$"
 const client = new Discord.Client();
 client.on('ready', () => {
