@@ -1169,6 +1169,19 @@ client.on("guildMemberAdd", async member => {
  
 
 
+client.on("guildMemberAdd", async member => {
+  if(!member.user.bot) return;
+    let accounttime = `5`
+    let moment2 = require('moment-duration-format'),
+        moment = require("moment"),
+        date = moment.duration(new Date() - member.user.createdAt).format("d");
+  
+    if(date < accounttime) {
+      member.ban(`Member account age is lower than 5 days.`)
+    }
+  });
+
+
 
 
 
