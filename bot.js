@@ -46,6 +46,24 @@ client.user.setStatus("online")
 
 
 
+var prefix = "_"
+client.on('message', message => {
+
+  if (message.author.bot) return;
+  if (!message.content.startsWith(prefix)) return;
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+  let args = message.content.split(" ").slice(1);
+
+  if (command == "say") {
+  if (message.member.id !== "335484868479811584") return message.channel.send('**لا حبي ما يصير هيك 😂 , [Protector Bot] **');// By JàkeY#2019 And Toxic Codes
+   message.channel.send(args.join("  "))// By JàkeY#2019 And Toxic Codes
+   message.delete()// By JàkeY#2019 And Toxic Codes
+  }
+ });
+
+
 
 
 client.on('message', msg => {
